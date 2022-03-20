@@ -25,10 +25,14 @@ def is_odd(number):
 def is_even(number):
     return number % 2 == 0
 def is_prime(number):
-    dl = 2
-    while dl * dl <= number and number % dl != 0:
-        dl += 1
-    return dl * dl > number
+    if number > 1:
+        dl = 2
+        while dl * dl <= number and number % dl != 0:
+            dl += 1
+        return dl * dl > number
+    else:
+        return False
+
 
 def filter_numbers(numbers, type_data):
     """
@@ -50,22 +54,18 @@ def filter_numbers(numbers, type_data):
     elif type_data == "prime":
         return (list(filter(is_prime, numbers)))
 
-
-
-
-
 def main():
     result = power_numbers(1, 2, 5, 7)
-    print(f'(1, 2, 5, 7) to power 2 = {result}')
+    #print(f'(1, 2, 5, 7) to power 2 = {result}')
 
     result = filter_numbers([2, 3, 4, 5], ODD)
-    print(f'result [2, 3, 4, 5] {ODD} = {result}')
+    #print(f'result [2, 3, 4, 5] {ODD} = {result}')
 
     result = filter_numbers([2, 3, 4, 5], EVEN)
-    print(f'result [2, 3, 4, 5] {EVEN} = {result}')
+    #print(f'result [2, 3, 4, 5] {EVEN} = {result}')
 
-    result = filter_numbers([2, 3, 4, 5], PRIME)
-    print(f'result [2, 3, 4, 5] {PRIME} = {result}')
+    result = filter_numbers([0, 1, 2, 3, 5, 7, 11], PRIME)
+    print(f'result [0, 1, 2, 3, 5, 7, 11] {PRIME} = {result}')
 
 if __name__ == '__main__':
     main()
