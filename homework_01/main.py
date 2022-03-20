@@ -56,13 +56,13 @@ def filter_numbers(numbers, type_data):
 
 def main():
     result = power_numbers(1, 2, 5, 7)
-    #print(f'(1, 2, 5, 7) to power 2 = {result}')
+    print(f'(1, 2, 5, 7) to power 2 = {result}')
 
     result = filter_numbers([2, 3, 4, 5], ODD)
-    #print(f'result [2, 3, 4, 5] {ODD} = {result}')
+    print(f'result [2, 3, 4, 5] {ODD} = {result}')
 
     result = filter_numbers([2, 3, 4, 5], EVEN)
-    #print(f'result [2, 3, 4, 5] {EVEN} = {result}')
+    print(f'result [2, 3, 4, 5] {EVEN} = {result}')
 
     result = filter_numbers([0, 1, 2, 3, 5, 7, 11], PRIME)
     print(f'result [0, 1, 2, 3, 5, 7, 11] {PRIME} = {result}')
