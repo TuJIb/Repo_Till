@@ -22,8 +22,12 @@ PRIME = "prime" #простые
 
 def is_odd(number):
     return number % 2 != 0
+
+
 def is_even(number):
     return number % 2 == 0
+
+
 def is_prime(number):
     if number > 1:
         dl = 2
@@ -45,14 +49,15 @@ def filter_numbers(numbers, type_data):
     >>> filter_numbers([2, 3, 4, 5], EVEN)
     <<< [2, 4]
     """
-    if type_data == "even":
+    if type_data == EVEN:
         #result = [number for number in numbers if number % 2 == 0]
         return (list(filter(is_even, numbers)))
-    elif type_data == "odd":
+    elif type_data == ODD:
         #result = [number for number in numbers if number % 2 != 0]
         return (list(filter(is_odd, numbers)))
-    elif type_data == "prime":
+    elif type_data == PRIME:
         return (list(filter(is_prime, numbers)))
+
 
 def main():
     result = power_numbers(1, 2, 5, 7)
@@ -66,6 +71,7 @@ def main():
 
     result = filter_numbers([0, 1, 2, 3, 5, 7, 11], PRIME)
     print(f'result [0, 1, 2, 3, 5, 7, 11] {PRIME} = {result}')
+
 
 if __name__ == '__main__':
     main()
